@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Package, AlertTriangle, History, RefreshCcw, MapPin } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -34,7 +35,7 @@ const machines = [
   { id: 6, location: "Girls Hostel B", stock: 0, status: "Out of Stock" },
 ];
 
-const AdminDashboard = () => {
+const AdminDashboard: React.FC = () => {
   const handleRefillStock = (machineId: number) => {
     toast.success(`Stock refill request submitted for machine ${machineId}!`);
   };
@@ -141,7 +142,7 @@ const AdminDashboard = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </Card>
 
         <Card className="p-6">
           <h2 className="text-xl font-semibold mb-4">Stock Level Trend</h2>
