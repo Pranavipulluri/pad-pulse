@@ -1,11 +1,18 @@
 
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 
 const Index = () => {
   const navigate = useNavigate();
+
+  // Automatically navigate to admin after animation
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/admin');
+    }, 2000); // 2 seconds delay after animation
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
@@ -16,26 +23,8 @@ const Index = () => {
         className="max-w-md w-full space-y-8"
       >
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Welcome</h1>
-          <p className="text-gray-600">Please select your role to continue</p>
-        </div>
-
-        <div className="space-y-4">
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer"
-            onClick={() => navigate('/user')}
-          >
-            <h2 className="text-xl font-semibold mb-2">User Portal</h2>
-            <p className="text-gray-600">Purchase products and view availability</p>
-          </Card>
-
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer"
-            onClick={() => navigate('/admin')}
-          >
-            <h2 className="text-xl font-semibold mb-2">Admin Portal</h2>
-            <p className="text-gray-600">Manage inventory and view analytics</p>
-          </Card>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">Welcome to SmartVend</h1>
+          <p className="text-gray-600">Initializing admin dashboard...</p>
         </div>
       </motion.div>
     </div>
