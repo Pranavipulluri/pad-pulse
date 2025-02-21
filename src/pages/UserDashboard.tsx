@@ -47,7 +47,7 @@ const UserDashboard = () => {
           >
             <h1 className="text-4xl font-bold">Sanitary Pad Vending Machines</h1>
             <p className="text-xl">Find and purchase from machines across campus</p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
