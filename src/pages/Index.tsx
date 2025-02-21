@@ -1,4 +1,5 @@
 
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -6,7 +7,7 @@ const Index = () => {
   const navigate = useNavigate();
 
   // Automatically navigate to admin after animation
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/admin');
     }, 2000); // 2 seconds delay after animation
